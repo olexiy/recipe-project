@@ -109,6 +109,14 @@ public class Recipe {
         this.notes = notes;
     }
 
+    public Set<Ingridient> getIngridients() {
+        return ingridients;
+    }
+
+    public void setIngridients(Set<Ingridient> ingridients) {
+        this.ingridients = ingridients;
+    }
+
     @Override
     public String toString() {
         return "Recipe{" +
@@ -120,6 +128,7 @@ public class Recipe {
                 ", source='" + source + '\'' +
                 ", url='" + url + '\'' +
                 ", directions='" + directions + '\'' +
+                ", ingridients=" + ingridients +
                 ", image=" + Arrays.toString(image) +
                 ", notes=" + notes +
                 '}';
