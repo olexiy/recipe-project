@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
+ * @author Olexiy Sokurenko
  */
 @Entity
 public class UnitOfMeasure {
@@ -15,7 +15,7 @@ public class UnitOfMeasure {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String uom;
+  private String description;
 
   public Long getId() {
     return id;
@@ -25,16 +25,11 @@ public class UnitOfMeasure {
     this.id = id;
   }
 
-  public String getUom() {
-    return uom;
+  public String getDescription() {
+    return description;
   }
 
-  public void setUom(String uom) {
-    this.uom = uom;
-  }
-
-  @Override
-  public String toString() {
-    return "UnitOfMeasure{" + "id=" + id + ", uom='" + uom + '\'' + '}';
+  public void setDescription(String description) {
+    this.description = description;
   }
 }

@@ -1,7 +1,7 @@
 package de.oxcellerator.recipeproject.domain;
 
 /**
- * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
+ * @author Olexiy Sokurenko
  */
 public enum Difficulty {
   EASY,

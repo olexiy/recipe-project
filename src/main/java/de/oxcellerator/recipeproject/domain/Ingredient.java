@@ -1,13 +1,20 @@
 package de.oxcellerator.recipeproject.domain;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
- * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
+ * @author Olexiy Sokurenko
  */
 @Entity
 public class Ingredient {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -64,17 +71,17 @@ public class Ingredient {
   @Override
   public String toString() {
     return "Ingredient{"
-            + "id="
-            + id
-            + ", description='"
-            + description
-            + '\''
-            + ", amount="
-            + amount
-            + ", unitOfMeasure="
-            + unitOfMeasure
-            + ", recipe="
-            + recipe
-            + '}';
+        + "id="
+        + id
+        + ", description='"
+        + description
+        + '\''
+        + ", amount="
+        + amount
+        + ", unitOfMeasure="
+        + unitOfMeasure
+        + ", recipe="
+        + recipe
+        + '}';
   }
 }

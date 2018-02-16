@@ -1,9 +1,14 @@
 package de.oxcellerator.recipeproject.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 
 /**
- * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
+ * @author Olexiy Sokurenko
  */
 @Entity
 public class Notes {
@@ -44,13 +49,13 @@ public class Notes {
   @Override
   public String toString() {
     return "Notes{"
-            + "id="
-            + id
-            + ", recipe="
-            + recipe
-            + ", recipeNotes='"
-            + recipeNotes
-            + '\''
-            + '}';
+        + "id="
+        + id
+        + ", recipe="
+        + recipe
+        + ", recipeNotes='"
+        + recipeNotes
+        + '\''
+        + '}';
   }
 }
