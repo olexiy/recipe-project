@@ -22,9 +22,11 @@ public class Recipe {
     private String directions;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingridient> ingridients;
+    private Set<Ingridient> ingredients;
     @Lob
     private byte[] image;
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
@@ -109,12 +111,20 @@ public class Recipe {
         this.notes = notes;
     }
 
-    public Set<Ingridient> getIngridients() {
-        return ingridients;
+    public Set<Ingridient> getIngredients() {
+        return ingredients;
     }
 
-    public void setIngridients(Set<Ingridient> ingridients) {
-        this.ingridients = ingridients;
+    public void setIngredients(Set<Ingridient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 
     @Override
@@ -128,8 +138,9 @@ public class Recipe {
                 ", source='" + source + '\'' +
                 ", url='" + url + '\'' +
                 ", directions='" + directions + '\'' +
-                ", ingridients=" + ingridients +
+                ", ingredients=" + ingredients +
                 ", image=" + Arrays.toString(image) +
+                ", difficulty=" + difficulty +
                 ", notes=" + notes +
                 '}';
     }
