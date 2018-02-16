@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
  **/
 @Entity
-public class Ingridient {
+public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -62,7 +62,7 @@ public class Ingridient {
 
     @Override
     public String toString() {
-        return "Ingridient{" +
+        return "Ingredient{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
                 ", amount=" + amount +

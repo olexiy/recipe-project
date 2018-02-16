@@ -5,6 +5,7 @@ import javax.persistence.*;
 /**
  * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
  **/
+@Entity
 public class Notes {
 
     @Id

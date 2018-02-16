@@ -22,7 +22,7 @@ public class Recipe {
     private String directions;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingridient> ingredients;
+    private Set<Ingredient> ingredients;
     @Lob
     private byte[] image;
     @Enumerated(value = EnumType.STRING)
@@ -111,11 +111,11 @@ public class Recipe {
         this.notes = notes;
     }
 
-    public Set<Ingridient> getIngredients() {
+    public Set<Ingredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(Set<Ingridient> ingredients) {
+    public void setIngredients(Set<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 
