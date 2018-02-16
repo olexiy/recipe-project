@@ -7,36 +7,34 @@ import javax.persistence.Id;
 
 /**
  * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
- **/
+ */
 @Entity
 public class UnitOfMeasure {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String uom;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    public Long getId() {
-        return id;
-    }
+  private String uom;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public String getUom() {
-        return uom;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setUom(String uom) {
-        this.uom = uom;
-    }
+  public String getUom() {
+    return uom;
+  }
 
-    @Override
-    public String toString() {
-        return "UnitOfMeasure{" +
-                "id=" + id +
-                ", uom='" + uom + '\'' +
-                '}';
-    }
+  public void setUom(String uom) {
+    this.uom = uom;
+  }
+
+  @Override
+  public String toString() {
+    return "UnitOfMeasure{" + "id=" + id + ", uom='" + uom + '\'' + '}';
+  }
 }

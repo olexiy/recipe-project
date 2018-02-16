@@ -6,142 +6,160 @@ import java.util.Set;
 
 /**
  * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
- **/
+ */
 @Entity
 public class Recipe {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String description;
-    private Integer prepTime;
-    private Integer cookTime;
-    private Integer servings;
-    private String source;
-    private String url;
-    private String directions;
+  private String description;
+  private Integer prepTime;
+  private Integer cookTime;
+  private Integer servings;
+  private String source;
+  private String url;
+  private String directions;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredients;
-    @Lob
-    private byte[] image;
-    @Enumerated(value = EnumType.STRING)
-    private Difficulty difficulty;
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+  private Set<Ingredient> ingredients;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Notes notes;
+  @Lob
+  private byte[] image;
 
-    public Long getId() {
-        return id;
-    }
+  @Enumerated(value = EnumType.STRING)
+  private Difficulty difficulty;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  @OneToOne(cascade = CascadeType.ALL)
+  private Notes notes;
 
-    public String getDescription() {
-        return description;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public Integer getPrepTime() {
-        return prepTime;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public void setPrepTime(Integer prepTime) {
-        this.prepTime = prepTime;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public Integer getCookTime() {
-        return cookTime;
-    }
+  public Integer getPrepTime() {
+    return prepTime;
+  }
 
-    public void setCookTime(Integer cookTime) {
-        this.cookTime = cookTime;
-    }
+  public void setPrepTime(Integer prepTime) {
+    this.prepTime = prepTime;
+  }
 
-    public Integer getServings() {
-        return servings;
-    }
+  public Integer getCookTime() {
+    return cookTime;
+  }
 
-    public void setServings(Integer servings) {
-        this.servings = servings;
-    }
+  public void setCookTime(Integer cookTime) {
+    this.cookTime = cookTime;
+  }
 
-    public String getSource() {
-        return source;
-    }
+  public Integer getServings() {
+    return servings;
+  }
 
-    public void setSource(String source) {
-        this.source = source;
-    }
+  public void setServings(Integer servings) {
+    this.servings = servings;
+  }
 
-    public String getUrl() {
-        return url;
-    }
+  public String getSource() {
+    return source;
+  }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+  public void setSource(String source) {
+    this.source = source;
+  }
 
-    public String getDirections() {
-        return directions;
-    }
+  public String getUrl() {
+    return url;
+  }
 
-    public void setDirections(String directions) {
-        this.directions = directions;
-    }
+  public void setUrl(String url) {
+    this.url = url;
+  }
 
-    public byte[] getImage() {
-        return image;
-    }
+  public String getDirections() {
+    return directions;
+  }
 
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
+  public void setDirections(String directions) {
+    this.directions = directions;
+  }
 
-    public Notes getNotes() {
-        return notes;
-    }
+  public byte[] getImage() {
+    return image;
+  }
 
-    public void setNotes(Notes notes) {
-        this.notes = notes;
-    }
+  public void setImage(byte[] image) {
+    this.image = image;
+  }
 
-    public Set<Ingredient> getIngredients() {
-        return ingredients;
-    }
+  public Notes getNotes() {
+    return notes;
+  }
 
-    public void setIngredients(Set<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
+  public void setNotes(Notes notes) {
+    this.notes = notes;
+  }
 
-    public Difficulty getDifficulty() {
-        return difficulty;
-    }
+  public Set<Ingredient> getIngredients() {
+    return ingredients;
+  }
 
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
-    }
+  public void setIngredients(Set<Ingredient> ingredients) {
+    this.ingredients = ingredients;
+  }
 
-    @Override
-    public String toString() {
-        return "Recipe{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", prepTime=" + prepTime +
-                ", cookTime=" + cookTime +
-                ", servings=" + servings +
-                ", source='" + source + '\'' +
-                ", url='" + url + '\'' +
-                ", directions='" + directions + '\'' +
-                ", ingredients=" + ingredients +
-                ", image=" + Arrays.toString(image) +
-                ", difficulty=" + difficulty +
-                ", notes=" + notes +
-                '}';
-    }
+  public Difficulty getDifficulty() {
+    return difficulty;
+  }
+
+  public void setDifficulty(Difficulty difficulty) {
+    this.difficulty = difficulty;
+  }
+
+  @Override
+  public String toString() {
+    return "Recipe{"
+            + "id="
+            + id
+            + ", description='"
+            + description
+            + '\''
+            + ", prepTime="
+            + prepTime
+            + ", cookTime="
+            + cookTime
+            + ", servings="
+            + servings
+            + ", source='"
+            + source
+            + '\''
+            + ", url='"
+            + url
+            + '\''
+            + ", directions='"
+            + directions
+            + '\''
+            + ", ingredients="
+            + ingredients
+            + ", image="
+            + Arrays.toString(image)
+            + ", difficulty="
+            + difficulty
+            + ", notes="
+            + notes
+            + '}';
+  }
 }

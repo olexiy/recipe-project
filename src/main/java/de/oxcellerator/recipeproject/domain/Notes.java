@@ -4,49 +4,53 @@ import javax.persistence.*;
 
 /**
  * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
- **/
+ */
 @Entity
 public class Notes {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @OneToOne
-    private Recipe recipe;
-    @Lob
-    private String recipeNotes;
+  @OneToOne
+  private Recipe recipe;
+  @Lob
+  private String recipeNotes;
 
-    public Long getId() {
-        return id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public Recipe getRecipe() {
-        return recipe;
-    }
+  public Recipe getRecipe() {
+    return recipe;
+  }
 
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
-    }
+  public void setRecipe(Recipe recipe) {
+    this.recipe = recipe;
+  }
 
-    public String getRecipeNotes() {
-        return recipeNotes;
-    }
+  public String getRecipeNotes() {
+    return recipeNotes;
+  }
 
-    public void setRecipeNotes(String recipeNotes) {
-        this.recipeNotes = recipeNotes;
-    }
+  public void setRecipeNotes(String recipeNotes) {
+    this.recipeNotes = recipeNotes;
+  }
 
-    @Override
-    public String toString() {
-        return "Notes{" +
-                "id=" + id +
-                ", recipe=" + recipe +
-                ", recipeNotes='" + recipeNotes + '\'' +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "Notes{"
+            + "id="
+            + id
+            + ", recipe="
+            + recipe
+            + ", recipeNotes='"
+            + recipeNotes
+            + '\''
+            + '}';
+  }
 }

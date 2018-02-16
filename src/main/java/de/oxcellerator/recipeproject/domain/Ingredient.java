@@ -5,69 +5,76 @@ import java.math.BigDecimal;
 
 /**
  * @author <a:href="mailto:ol.sakura@gmail.com">Olexiy Sokurenko</a>
- **/
+ */
 @Entity
 public class Ingredient {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String description;
-    private BigDecimal amount;
-    @OneToOne(fetch = FetchType.EAGER)
-    private UnitOfMeasure unitOfMeasure;
+  private String description;
+  private BigDecimal amount;
 
-    @ManyToOne
-    private Recipe recipe;
+  @OneToOne(fetch = FetchType.EAGER)
+  private UnitOfMeasure unitOfMeasure;
 
-    public Long getId() {
-        return id;
-    }
+  @ManyToOne
+  private Recipe recipe;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public String getDescription() {
-        return description;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public BigDecimal getAmount() {
-        return amount;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
+  public BigDecimal getAmount() {
+    return amount;
+  }
 
-    public Recipe getRecipe() {
-        return recipe;
-    }
+  public void setAmount(BigDecimal amount) {
+    this.amount = amount;
+  }
 
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
-    }
+  public Recipe getRecipe() {
+    return recipe;
+  }
 
-    public UnitOfMeasure getUnitOfMeasure() {
-        return unitOfMeasure;
-    }
+  public void setRecipe(Recipe recipe) {
+    this.recipe = recipe;
+  }
 
-    public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
-        this.unitOfMeasure = unitOfMeasure;
-    }
+  public UnitOfMeasure getUnitOfMeasure() {
+    return unitOfMeasure;
+  }
 
-    @Override
-    public String toString() {
-        return "Ingredient{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", amount=" + amount +
-                ", unitOfMeasure=" + unitOfMeasure +
-                ", recipe=" + recipe +
-                '}';
-    }
+  public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
+    this.unitOfMeasure = unitOfMeasure;
+  }
+
+  @Override
+  public String toString() {
+    return "Ingredient{"
+            + "id="
+            + id
+            + ", description='"
+            + description
+            + '\''
+            + ", amount="
+            + amount
+            + ", unitOfMeasure="
+            + unitOfMeasure
+            + ", recipe="
+            + recipe
+            + '}';
+  }
 }
