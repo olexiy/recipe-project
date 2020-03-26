@@ -1,31 +1,25 @@
 package de.oxcellerator.recipeproject.repositories;
 
-import static org.junit.Assert.*;
-
 import de.oxcellerator.recipeproject.domain.UnitOfMeasure;
-import java.util.Optional;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Olexiy Sokurenko
  **/
-@RunWith(SpringRunner.class)
+@ExtendWith(MockitoExtension.class)
 @DataJpaTest
 public class UnitOfMeasureRepositoryTestIT {
 
   @Autowired
   UnitOfMeasureRepository unitOfMeasureRepository;
-
-  @Before
-  public void setUp(){
-
-  }
 
   @Test
   // @DirtiesContext //add if test is destructive for the context

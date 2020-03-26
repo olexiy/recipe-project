@@ -1,29 +1,25 @@
 package de.oxcellerator.recipeproject.controllers;
 
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.anySet;
+import de.oxcellerator.recipeproject.domain.Recipe;
+import de.oxcellerator.recipeproject.services.RecipeService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.ui.Model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
-
-import de.oxcellerator.recipeproject.domain.Recipe;
-import de.oxcellerator.recipeproject.services.RecipeService;
-import java.util.HashSet;
-import java.util.Set;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.ui.Model;
 
 /**
  * @author Olexiy Sokurenko
@@ -38,7 +34,7 @@ public class IndexControllerTest {
   @Mock
   private Model model;
 
-  @Before
+    @BeforeEach
   public void setUp(){
     MockitoAnnotations.initMocks(this);
     indexController = new IndexController(recipeService);

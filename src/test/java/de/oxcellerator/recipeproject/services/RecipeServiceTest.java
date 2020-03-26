@@ -3,8 +3,8 @@ package de.oxcellerator.recipeproject.services;
 import de.oxcellerator.recipeproject.domain.Recipe;
 import de.oxcellerator.recipeproject.repositories.RecipeRepository;
 import de.oxcellerator.recipeproject.services.impl.RecipeServiceImpl;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -12,9 +12,9 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
+import static org.springframework.test.util.AssertionErrors.assertNotNull;
 
 /**
  * @author Olexiy Sokurenko
@@ -26,7 +26,7 @@ public class RecipeServiceTest {
   @Mock
   RecipeRepository recipeRepository;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     MockitoAnnotations.initMocks(this);
     recipeService = new RecipeServiceImpl(recipeRepository);
