@@ -7,16 +7,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class UnitOfMeasureCommandToUnitOfMeasureTest {
-
+/**
+ * @author Olexiy Sokurenko <ol.sakura@gmail.com>
+ * Date: 26.03.2020
+ */
+public class UnitOfMeasureToUnitOfMeasureCommandTest {
     public static final String DESCRIPTION = "description";
     public static final Long LONG_VALUE = 1L;
 
-    UnitOfMeasureCommandToUnitOfMeasure converter;
+    UnitOfMeasureToUnitOfMeasureCommand converter;
 
     @BeforeEach
     public void setUp() {
-        converter = new UnitOfMeasureCommandToUnitOfMeasure();
+        converter = new UnitOfMeasureToUnitOfMeasureCommand();
     }
 
     @Test
@@ -26,22 +29,22 @@ public class UnitOfMeasureCommandToUnitOfMeasureTest {
 
     @Test
     public void testEmptyObject() {
-        assertNotNull(converter.convert(new UnitOfMeasureCommand()));
+        assertNotNull(converter.convert(new UnitOfMeasure()));
     }
 
     @Test
-    void testConvert() {
+    void convert() {
         //given
-        UnitOfMeasureCommand command = new UnitOfMeasureCommand();
-        command.setId(LONG_VALUE);
-        command.setDescription(DESCRIPTION);
+        UnitOfMeasure uom = new UnitOfMeasure();
+        uom.setId(LONG_VALUE);
+        uom.setDescription(DESCRIPTION);
 
         //when
-        UnitOfMeasure uom = converter.convert(command);
+        UnitOfMeasureCommand command = converter.convert(uom);
 
         //then
-        assertNotNull(uom);
-        assertEquals(uom.getId(), LONG_VALUE);
-        assertEquals(uom.getDescription(), DESCRIPTION);
+        assertNotNull(command);
+        assertEquals(command.getId(), LONG_VALUE);
+        assertEquals(command.getDescription(), DESCRIPTION);
     }
 }
