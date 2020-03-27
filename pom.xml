@@ -26,6 +26,7 @@
     <sonar.projectKey>olexiy_recipe-project</sonar.projectKey>
     <sonar.organization>olexiy</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.login>5158f2985554797434d42911089f77ee7ae03984</sonar.login>
   </properties>
 
   <dependencies>
