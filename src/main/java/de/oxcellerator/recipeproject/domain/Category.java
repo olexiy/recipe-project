@@ -2,6 +2,7 @@ package de.oxcellerator.recipeproject.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,6 +12,7 @@ import java.util.Set;
  **/
 @Data
 @EqualsAndHashCode(exclude = {"recipes"})
+@ToString(exclude = {"recipes"})
 @Entity
 public class Category {
 
@@ -20,9 +22,5 @@ public class Category {
   private String description;
   @ManyToMany(mappedBy = "categories")
   private Set<Recipe> recipes;
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Category;
-  }
 
 }

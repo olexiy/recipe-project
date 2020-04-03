@@ -1,5 +1,7 @@
 package de.oxcellerator.recipeproject.services;
 
+import de.oxcellerator.recipeproject.converters.RecipeCommandToRecipe;
+import de.oxcellerator.recipeproject.converters.RecipeToRecipeCommand;
 import de.oxcellerator.recipeproject.domain.Recipe;
 import de.oxcellerator.recipeproject.repositories.RecipeRepository;
 import de.oxcellerator.recipeproject.services.impl.RecipeServiceImpl;
@@ -19,21 +21,26 @@ import static org.springframework.test.util.AssertionErrors.assertNotNull;
 /**
  * @author Olexiy Sokurenko
  **/
-public class RecipeServiceTest {
+public class RecipeServiceImplTest {
 
-  RecipeServiceImpl recipeService;
+    RecipeServiceImpl recipeService;
 
-  @Mock
-  RecipeRepository recipeRepository;
+    @Mock
+    RecipeRepository recipeRepository;
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommandConverter;
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipeConverter;
 
-  @BeforeEach
-  public void setUp() {
-    MockitoAnnotations.initMocks(this);
-    recipeService = new RecipeServiceImpl(recipeRepository);
-  }
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipeConverter,
+                recipeToRecipeCommandConverter);
+    }
 
-  @Test
-  public void getRecipes() {
+    @Test
+    public void getRecipes() {
     Recipe recipe = new Recipe();
     HashSet<Recipe> recipesData = new HashSet<>();
     recipesData.add(recipe);

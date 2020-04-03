@@ -4,7 +4,5 @@ package de.oxcellerator.recipeproject.domain;
  * @author Olexiy Sokurenko
  */
 public enum Difficulty {
-  EASY,
-  MODERATE,
-  HARD
+    EASY, MODERATE, KIND_OF_HARD, HARD
 }
